@@ -11,7 +11,7 @@ fn main() {
     let script = cryptogams_script(feature);
     eprintln!("selected cryptogams script: {script}");
     let src = Path::new(script).file_stem().unwrap().to_str().unwrap();
-    let sha3 = Path::new(&env("OUT_DIR")).join(format!("{src}.s"));
+    let sha3 = Path::new(&env("OUT_DIR")).join(format!("{src}.S"));
     println!("cargo:rustc-env=SHA3_ASM_SRC={src}");
 
     let flavor = cryptogams_script_flavor(feature);
